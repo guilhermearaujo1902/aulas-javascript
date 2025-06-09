@@ -1,0 +1,64 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .destaque {
+            background-color: brown;
+            color: #FFF;
+            font-size: 20px;
+            padding: 10px;
+            width: 300px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Manipulando HTML através do Javascript</h1>
+
+    <label for="numA">Primeiro número</label><br>
+    <input type="text" id="numA">
+    <br><br>
+    <label for="numB">Segundo número</label><br>
+    <input type="text" id="numB">
+
+    <br><br>
+    <button onclick="somar()">Somar</button>
+    <button>Subtrair</button>
+    <button>Dividir</button>
+    <button>Multiplicar</button>
+
+    <div id="resultado"></div>
+    
+    <script>
+
+        function somar() {
+
+            // Obtendo os valores dos inputs e convertendo
+            // para o tipo Number
+            const numA = Number(document.getElementById('numA').value);
+            const numB = Number(document.getElementById('numB').value);
+            
+            // Mapeando a Div na qual será inserido o resultado da soma
+            const divResultado = document.getElementById('resultado');
+
+            // Realizando o processamento de dados
+            const soma = numA + numB;
+
+            // Inserindo o resultado na div, em forma de texto simples
+            // divResultado.innerText = soma;
+
+            // Inserindo o resultado na div, em forma de tags html
+            divResultado.innerHTML = `
+                <p>Resultado:</p>
+                <p class="destaque">${soma}</p>
+            `;
+
+        }
+
+    </script>
+</body>
+</html>

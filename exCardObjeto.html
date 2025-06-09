@@ -1,0 +1,64 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Gerando cards com objetos</h1>
+
+    <input type="text" id="codigo" placeholder="Ex: 123">
+    <input type="text" id="preco" placeholder="Ex: 15">
+    <input type="text" id="desc" placeholder="Ex: Notebook">
+
+    <button onclick="gerarCard()">Gerar Card</button>
+
+    <p>Cards cadastrados</p>
+    <div class="box" id="box">
+
+    </div>
+    
+    <script>
+
+        function gerarCard() {
+            
+            // Mapeando os Inputs
+            const inputCodigo = document.getElementById('codigo');
+            const inputPreco = document.getElementById('preco');
+            const inputDesc = document.getElementById('desc');
+    
+            // Gerando o objeto com os valores das propriedades de acordo com os valores
+            // dos Inputs
+            const produto = {
+                codigo: inputCodigo.value,
+                preco: inputPreco.value,
+                descricao: inputDesc.value
+            };
+    
+            // Criando uma constante para armazenar o html que será inserido na div
+            const card = `
+                <div class="card">
+                    <h2>${produto.descricao}</h2>
+                    <p><strong>Código: </strong>${produto.codigo}</p>
+                    <h3>${produto.preco}</h3>
+                </div>
+            `;
+                
+            // Mapeando a div e inserindo o conteúdo html
+            const divBox = document.getElementById('box');
+            divBox.innerHTML += card;
+
+            // Limpar os campos
+            inputCodigo.value = '';
+            inputDesc.value = '';
+            inputPreco.value = '';
+
+            // Enviar o foco para o input Código
+            inputCodigo.focus();
+        }
+
+
+    </script>
+</body>
+</html>

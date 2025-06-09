@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0b39ad;
+    padding-top: 50px;
+}
+
+div {
+    width: 300px;
+    padding: 16px;
+    margin: auto;
+    background-color: #FFF;
+    box-shadow: 2px 2px 7px #292929;
+    text-align: center;
+    border-radius: 4px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-bottom: solid 1px #0b39ad;
+    color: #0b39ad;
+    outline: none;
+}
+
+
+h1, input {
+    margin-bottom: 24px;
+}
+
+button {
+    border: none;
+    background-color: #0b39ad;
+    color: #FFF;
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}

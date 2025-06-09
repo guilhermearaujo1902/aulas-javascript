@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Entendendo objetos com propriedades dinâmicas</h1>
+    
+
+    <script>
+
+        const produto = {
+        };
+
+        produto.codigo = 7;
+        produto ['nome'] = 'Notebook';
+
+        let novaPropriedade = 'status';
+        let novoValor = true;
+
+        produto[novaPropriedade] = novoValor;
+
+        console.log(produto);
+        console.log(produto.novaPropriedade);
+        console.log(produto.status);
+        console.log(produto[novaPropriedade]);
+
+    </script>
+</body>
+</html>

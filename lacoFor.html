@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Entendendo laço FOR</h1>
+
+    <button onclick="gerarParagrafos()">Gerar parágrafos</button><br>
+    <div id="resultado"></div>
+    
+    <script>
+
+        function gerarParagrafos() {
+
+            const divResultado = document.getElementById('resultado');
+
+            for (let contador = 0; contador < 7; contador++) {
+                divResultado.innerHTML += `<p>${contador}</p>`;
+            }
+
+        }
+
+    </script>
+</body>
+</html>

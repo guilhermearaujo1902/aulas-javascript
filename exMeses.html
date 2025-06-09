@@ -1,0 +1,44 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Validando os meses</h1>
+
+    <select name="mes" id="mes">
+        <option>Escolha uma opção</option>
+        <option value="2">Mês 2</option>
+        <option value="7">Mês 7</option>
+        <option value="11">Mês 11</option>
+    </select>
+
+    <button onclick="validarMes()">Validar mês</button>
+    
+    <script>
+        
+        function validarMes() {
+
+            const mesSelecionado = Number(document.getElementById('mes').value);
+
+            switch (mesSelecionado) {
+                case 2:
+                    alert('Mês selecionado: Fevereiro');
+                    break;
+                case 7:
+                    alert('Mês selecionado: Julho');
+                    break;
+                case 11:
+                    alert('Mês selecionado: Novembro');
+                    break;
+                default: 
+                    alert('Mês inválido!');
+            }
+
+        }
+
+    </script>
+</body>
+</html>

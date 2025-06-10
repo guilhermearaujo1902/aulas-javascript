@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Manipulando vetores</h1>
+
+    <input type="text" id="produto" placeholder="Ex: notebook"><br>
+    <input type="number" id="posicao" value="0"><br>
+
+    <button onclick="addInicio()">Add Início</button>
+    <button onclick="addFinal()">Add Final</button>
+
+    <br><br>
+    <div id="lista"></div>
+
+    <script>
+
+        const listaProduto = [];
+
+        function addInicio() {
+            const produto = document.getElementById('produto').value;
+            listaProduto.unshift(produto);
+
+            const divLista = document.getElementById('lista');
+            divLista.innerHTML = listaProduto.toString();
+        }
+
+        function addFinal() {
+            const produto = document.getElementById('produto').value;
+            listaProduto.push(produto);
+
+            const divLista = document.getElementById('lista');
+            divLista.innerHTML = listaProduto.toString();
+        }
+
+    </script>
+    
+</body>
+</html>

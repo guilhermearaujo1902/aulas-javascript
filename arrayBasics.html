@@ -1,0 +1,71 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Entendendo Vetores/Array</h1>
+    
+    <script>
+
+        // Declarar um vetor novo
+        const listaAlunos = ['Guilherme', 'Harry', 'Bob'];
+
+        // Imprimindo o tipo da constante
+        console.log(typeof listaAlunos);
+
+        // Imprimindo o tamanho da lista
+        console.log(listaAlunos.length);
+
+        // Imprimindo a lista em si
+        console.log(listaAlunos);
+
+        // Imprimindo a lista em forma de texto
+        console.log(listaAlunos.toString());
+
+        // Manipulando o vetor
+
+        // Remover o último elemento do vetor
+        listaAlunos.pop();
+        console.log(listaAlunos.toString());
+
+        // Remover o primeiro elemento da lista
+        listaAlunos.shift();
+        console.log(listaAlunos.toString());
+
+        // Insere o elemento na primeira posição da lista
+        listaAlunos.unshift('Bob');
+        console.log(listaAlunos.toString());
+
+        // Inserir o elemento na ultima posição da lista
+        listaAlunos.push('Maria');
+        console.log(listaAlunos.toString());
+
+
+        // Splice
+        // 1º parametro: posição do elemento desejado
+        // 2º parametro: quantidade de elemento as serem removidos a partir daquela posição
+        // 3º parametro: novos elementos inseridos na posição específica
+        // Remover em uma posição específica
+        listaAlunos.splice(1,1);
+        console.log(listaAlunos.toString());
+
+        // Inserir elemento a partir de uma posição específica
+        listaAlunos.splice(1,0,'Rony', 'Jéssica', 'Carol');
+        console.log(listaAlunos.toString());
+
+        // Editar um elemento em uma posição específica
+        listaAlunos.splice(2,1,'Bianca');
+        console.log(listaAlunos.toString());
+
+
+        // Capturar o índice de um elemento da lista
+        const indiceCarol = listaAlunos.indexOf('Carol');
+        console.log(listaAlunos.toString());
+        console.log("Indice do elemento 'Carol' - " + indiceCarol);
+
+    </script>
+</body>
+</html>

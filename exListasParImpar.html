@@ -1,0 +1,54 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="number" id="numero">
+    <button onclick="validar()">Validar</button>
+
+    <br>
+    <h2>Números Pares</h2>
+    <div id="par"></div>
+
+    <h2>Números Ímpares</h2>
+    <div id="impar"></div>
+    
+
+    <script>
+
+        // Criar a lista de números
+        const listaNumeros = [];
+
+        // Mapear as divs de números Pares e Ímpares
+        const divPar = document.getElementById('par');
+        const divImpar = document.getElementById('impar');
+
+        function validar() {
+
+            // Mapear o input do número a ser testado
+            const numero = Number(document.getElementById('numero').value);
+
+            // Adicionar o número obtido do input na lista
+            listaNumeros.push(numero);
+
+            // Limpar as divs para receber os novos valores
+            divImpar.innerHTML = '';
+            divPar.innerHTML = '';
+
+            // Percorrer a lista e atribuir os números da lista para a sua div correspondente
+            listaNumeros.forEach(numero => {
+                if (numero % 2 == 0) {
+                    divPar.innerHTML += `${numero} -`;
+                } else {
+                    divImpar.innerHTML += `${numero} -`;
+                }
+            });
+
+        }
+
+    </script>
+</body>
+</html>

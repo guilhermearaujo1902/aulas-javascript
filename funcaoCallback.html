@@ -1,0 +1,37 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Entendendo função Callback</h1>
+
+
+    <script>
+
+        const x = 3;
+
+        function somar(numA, numB) {
+            return numA + numB;
+        }
+
+        function subtrair(numA, numB) {
+            return numA - numB;
+        }
+
+        function executarOperacao(operacao) {
+            const resultado = operacao(7,2);
+            console.log(resultado);
+        }
+
+        console.log(this.x);
+
+        executarOperacao(somar);
+        executarOperacao(subtrair);
+
+    </script>
+    
+</body>
+</html>

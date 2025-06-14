@@ -12,33 +12,62 @@
     <input type="number" id="numB">
     <button onclick="realizarOperacao('somar')">Somar</button>
     <button onclick="realizarOperacao('subtrair')">Subtrair</button>
+    <button onclick="realizarOperacao('multiplicar')">Multiplicar</button>
+    <button onclick="limparCampos()">Limpar</button>
 
     <div id="resultado"></div>
-    
+
     <script>
 
+        // Função simples COM parâmetro
         function realizarOperacao(operacao){
 
             const a = Number(document.getElementById('numA').value);
             const b = Number(document.getElementById('numB').value);
 
             if (operacao == 'somar') {
-                imprimirSomar(a,b);
+                imprimirSoma(a,b);
             }
 
             if (operacao == 'subtrair') {
                 imprimirSubtracao(a,b);
             }
+
+            if (operacao == 'multiplicar') {
+                // Capturando o retorno da função 'multiplicar' e guardando na constante 'resultado'
+                const resultado = multiplicar(a, b);
+                const divResultado = document.getElementById('resultado');
+                divResultado.innerHTML = `A multiplicação entre ${a} e ${b} é ${resultado}`;
+            }
+
+            limparCampos();
         }
 
-        function imprimirSomar(a, b) {
+        // Função simples COM parâmetros
+        function imprimirSoma(a, b) {
             const divResultado = document.getElementById('resultado');
             divResultado.innerHTML = `A soma entre ${a} e ${b} é ${a+b}`;
         }
 
+        // Função simples COM parâmetros
         function imprimirSubtracao(a, b) {
             const divResultado = document.getElementById('resultado');
             divResultado.innerHTML = `A subtração entre ${a} e ${b} é ${a-b}`;
+        }
+
+        // Função simples SEM parâmetros
+        function limparCampos() {
+            // Limpando a propriedade 'value' dos dois Inputs
+            document.getElementById('numA').value = '';
+            document.getElementById('numB').value = '';
+
+            // Enviando o foco para o primeiro Input
+            document.getElementById('numA').focus();
+        }
+
+        // Função COM retorno e COM parâmetros
+        function multiplicar(a, b) {
+            return a * b;
         }
 
     </script>

@@ -1,0 +1,47 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <ul>
+        <li>
+            <a href="cadastro.html">Cadastro</a>
+        </li>
+        <li>
+            <a href="lista.html">Lista</a>
+        </li>
+    </ul>
+
+    <h1>Cadastro de funcionário</h1>
+    <input type="text" id="nome">
+    <button onclick="adicionar()">Adicionar</button>
+    
+    <script>
+
+        function adicionar() {
+
+            // Mapeando o texto do input
+            const funcionario = document.getElementById('nome').value;
+
+            // Criando a lista, buscando a lista existente no armazenamento local com o nome de 
+            // 'lista' e caso não existir esse item, então cria uma lista vazia através do '[]'
+            // JSON.parse - serve para converter o elemento do armazenamento em um objeto JS válido
+            const listaFuncionarios = JSON.parse(localStorage.getItem('lista')) || [];
+
+            // Inserindo o novo funcionário na lista, valor digitado no Input
+            listaFuncionarios.push(funcionario);
+
+            // Adicionando a lista ao LocalStorage no item 'lista'
+            // JSON.stringify - serve para converter o elemento em um objeto escrito em forma de
+            // texto por extenso, ou seja, uma string
+            localStorage.setItem('lista', JSON.stringify(listaFuncionarios));
+
+            alert('Adicionado com sucesso!');
+        }
+
+    </script>
+</body>
+</html>
